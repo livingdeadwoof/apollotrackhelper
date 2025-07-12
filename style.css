@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling if map is full screen */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: absolute; /* Ensures it fills the screen */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Behind status message */
+}
+
+#status-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    z-index: 1; /* Above the map */
+    text-align: center;
+}
