@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Test - Is L Defined?</title>
+</head>
+<body>
+    <div id="status">Testing Leaflet loading...</div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('status');
+            if (typeof L !== 'undefined') {
+                statusDiv.textContent = 'SUCCESS: Leaflet (L) is defined! The library loaded.';
+                console.log('Leaflet L object:', L); // This would only show in developer console
+            } else {
+                statusDiv.textContent = 'FAIL: Leaflet (L) is NOT defined. The library failed to load.';
+                console.error('L is undefined. Leaflet might not have loaded.'); // This would only show in developer console
+            }
+        });
+    </script>
+</body>
+</html>
